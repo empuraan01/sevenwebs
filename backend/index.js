@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
+import authRoutes from './routes/auth.js';
 
 
 dotenv.config();
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 // app.use('/api/books', bookRoutes);
 // app.use('/api/reviews', reviewRoutes);
 
