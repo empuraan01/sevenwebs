@@ -14,6 +14,7 @@ import SignupPage from './pages/SignupPage';
 import BooksPage from './pages/BooksPage';
 import AddBookPage from './pages/AddBookPage';
 import BookDetailPage from './pages/BookDetailPage';
+import MyReviewsPage from './pages/MyReviewsPage';
 
 function App() {
   return (
@@ -32,6 +33,11 @@ function App() {
             <Route path="/add-book" element={
               <ProtectedRoute>
                 <AddBookPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/reviews/my-reviews" element={
+              <ProtectedRoute>
+                <MyReviewsPage />
               </ProtectedRoute>
             } />
           </Routes>
