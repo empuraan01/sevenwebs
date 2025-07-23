@@ -14,7 +14,25 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', process.env.CLIENT_URL].filter(Boolean),
+  origin: [
+    
+    'http://localhost:5173', 
+    'http://localhost:3000', 
+    
+    
+    process.env.CLIENT_URL,
+    process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : null,
+    
+    
+    'https://sevenwebsfrontend.vercel.app',
+    'https://sevenwebsfrontend-padmanabhans-projects-62e10444.vercel.app',
+    'https://sevenwebsfrontend-empuraan01-padmanabhans-projects-62e10444.vercel.app',
+    'https://sevenwebsfrontend-mw3ybya1u-padmanabhans-projects-62e10444.vercel.app',
+    
+
+    /\.vercel\.app$/,  
+    /\.railway\.app$/  
+  ].filter(Boolean),
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
