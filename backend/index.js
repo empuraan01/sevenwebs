@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import authRoutes from './routes/auth.js';
+import bookRoutes from './routes/books.js';
+import reviewRoutes from './routes/reviews.js';
 
 
 dotenv.config();
@@ -26,9 +28,10 @@ app.get('/', (req, res) => {
 });
 
 
+
 app.use('/api/auth', authRoutes);
-// app.use('/api/books', bookRoutes);
-// app.use('/api/reviews', reviewRoutes);
+app.use('/api/books', bookRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 
 app.use((err, req, res, next) => {
