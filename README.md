@@ -138,6 +138,8 @@ User neeeds to add .env files for both backend and frontend. I have uploaded fil
 
 User can also refer to the Loom video where I have setup the project from scratch by cloning the github repository
 
+Loom Link : https://www.loom.com/share/0f0689149d0646239d47043fc552eed9?sid=774bba39-ae82-498e-8ba7-601a44504335
+
 
 ### Running the Application
 
@@ -191,14 +193,13 @@ User can also refer to the Loom video where I have setup the project from scratc
 
 **Register User**
 ```bash
-POST /api/auth/register
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": "new@example.com", 
-  "password": "password123"
-}
+curl -X POST http://localhost:5001/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "new@example.com",
+    "password": "Password123"
+  }'
 ```
 
 **Add Review**
